@@ -1,0 +1,54 @@
+.H265REPACK(1)
+.SH Name
+     image2WebP - convert photos to .webp
+
+.SH SYNOPSIS
+image2WebP
+.I <source> <target> [quality] [compression]
+
+.SH DESCRIPTION
+     image2WebP is a script for converting image files to webp 
+     format. It supports both individual files or directories 
+     containing multiple video files. The script allows the user 
+     to specify a CRF (Constant Rate Factor) value quality and a 
+     preset for the compression.
+
+     The script uses ffmpeg for the conversion process and can handle a 
+     variety of video formats. It also detects and retains the color 
+     range of the source video. This makes the conversion process 
+     efficient while maintaining video quality.
+
+.SH REQUIRED ARGUMENTS
+     source
+         The source file or directory containing video files to be 
+         converted.
+
+     target
+         The target file or directory where the converted video(s) will 
+         be saved.
+
+.SH OPTIONAL ARGUMENTS
+     quality
+         Quality for the output image (0-100).
+
+     compression
+         Compression level (0-6).
+
+.SH USAGE
+     To convert a single file:
+         image2WebP input.ext output.webp
+         
+     To convert multiple files in a directory:
+         image2WebP /path/to/source_directory /path/to/target_directory
+
+     Add custom quality and compression ratios:
+     	 image2WebP /path/to/file/or/directory path/to/target 75 6
+
+.SH AUTHOR
+     Written by [Your Name]
+
+.SH REPORTING BUGS
+     Report bugs to <your_email@example.com>.
+
+.SH COPYRIGHT
+     This is free software: you are free to change and redistribute it.

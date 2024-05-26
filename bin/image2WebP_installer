@@ -1,4 +1,4 @@
-#!/bin/bash
+echo "#!/bin/bash
 #################################################################
 #              This Script Brought to you by                    #
 #                        theBluWIz                              #
@@ -101,4 +101,18 @@ else
   base_name=$(basename "$SOURCE")
   target_file="$TARGET.webp"
   convert_file "$SOURCE" "$target_file" "$QUALITY" "$COMPRESSION"
+fi
+" > /tmp/ImageToWebP.sh
+chmod +x /tmp/ImageToWebP.sh
+# check if directory ~/.bin exists
+if [ ! -d ~/.bin ]; then
+  mkdir ~/.bin
+fi
+# move the script to ~/.bin
+mv /tmp/ImageToWebP.sh ~/.bin/ImageToWebP
+# check if ~/.bin is in PATH
+if [[ ":$PATH:" == *":~/.bin:"* ]]; then
+  echo "~/.bin is already in PATH"
+else
+  echo "export PATH=\$PATH:~/.bin" >> ~/.bashrc
 fi
