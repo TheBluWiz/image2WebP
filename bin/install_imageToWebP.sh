@@ -7,11 +7,11 @@ echo "This script will require sudo permissions. Please ensure you have the nece
 mkdir -p ~/.bin || { echo "Failed to create ~/.bin directory"; exit 1; }
 
 # Download and unzip the script
-curl -L -o /tmp/image2WebP.zip "https://github.com/TheBluWiz/image2WebP/archive/refs/tags/v0.2.1.zip" || { echo "Failed to download the script"; exit 1; }
+curl -L -o /tmp/image2WebP.zip "https://github.com/TheBluWiz/image2WebP/archive/refs/tags/v0.2.2.zip" || { echo "Failed to download the script"; exit 1; }
 unzip /tmp/image2WebP.zip -d /tmp || { echo "Failed to unzip the script"; exit 1; }
 
 # Copy the script to ~/.bin and make it executable
-cp /tmp/image2WebP-0.2.1/image2WebP.sh ~/.bin/image2WebP || { echo "Failed to copy the script to ~/.bin"; exit 1; }
+cp /tmp/image2WebP-0.2.2/bin/image2WebP.sh ~/.bin/image2WebP || { echo "Failed to copy the script to ~/.bin"; exit 1; }
 chmod +x ~/.bin/image2WebP || { echo "Failed to make the script executable"; exit 1; }
 
 # Install man page
