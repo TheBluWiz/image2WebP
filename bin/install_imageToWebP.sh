@@ -1,5 +1,5 @@
 #!/bin/bash
-current_version="0.3.2"
+current_version="0.4.0"
 
 # Notify the user that sudo might be needed
 echo "This script will require sudo permissions. Please ensure you have the necessary rights."
@@ -61,4 +61,6 @@ if [[ "$remove" == "y" ]]; then
   rm -- "$0" || { echo "Failed to remove the installer file"; exit 1; }
 fi
 
+# update zsh/bash source
+source ~/.zshrc || source ~/.bashrc
 echo "Installation completed successfully."
