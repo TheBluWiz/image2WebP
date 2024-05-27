@@ -8,7 +8,7 @@
 # Function to display usage information
 show_usage() {
   cat <<EOF
-Usage: ImageToWebP <source> <target> [quality] [compression]
+Usage: Image2WebP <source> <target> [quality] [compression]
 
 Arguments:
   <source>           Path to source image or video file(s) or directory.
@@ -18,13 +18,13 @@ Arguments:
 
 Examples:
   Basic Conversion:
-    ImageToWebP input.jpg output.webp
+    Image2WebP input.jpg output.webp
 
   Custom Quality and Compression:
-    ImageToWebP input.png output.webp 75 4
+    Image2WebP input.png output.webp 75 4
 
   Video Conversion:
-    ImageToWebP input.mp4 output.webp 80 3
+    Image2WebP input.mp4 output.webp 80 3
 EOF
 }
 
