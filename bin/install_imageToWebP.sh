@@ -1,4 +1,5 @@
 #!/bin/bash
+current_version="0.3.2"
 
 # Notify the user that sudo might be needed
 echo "This script will require sudo permissions. Please ensure you have the necessary rights."
@@ -7,16 +8,16 @@ echo "This script will require sudo permissions. Please ensure you have the nece
 mkdir -p ~/.bin || { echo "Failed to create ~/.bin directory"; exit 1; }
 
 # Download and unzip the script
-curl -L -o /tmp/image2WebP.zip "https://github.com/TheBluWiz/image2WebP/archive/refs/tags/v0.3.1.zip" || { echo "Failed to download the script"; exit 1; }
+curl -L -o /tmp/image2WebP.zip "https://github.com/TheBluWiz/image2WebP/archive/refs/tags/v$current_version.zip" || { echo "Failed to download the script"; exit 1; }
 unzip /tmp/image2WebP.zip -d /tmp || { echo "Failed to unzip the script"; exit 1; }
 
 # Copy the script to ~/.bin and make it executable
-cp /tmp/image2WebP-0.3.1/bin/image2WebP.sh ~/.bin/image2WebP || { echo "Failed to copy the script to ~/.bin"; exit 1; }
+cp /tmp/image2WebP-$current_version/bin/image2WebP.sh ~/.bin/image2WebP || { echo "Failed to copy the script to ~/.bin"; exit 1; }
 chmod +x ~/.bin/image2WebP || { echo "Failed to make the script executable"; exit 1; }
 
 # Install man page
 sudo mkdir -p /usr/local/share/man/man1 || { echo "Failed to create man directory"; exit 1; }
-sudo cp /tmp/image2WebP-0.1.0/man/image2WebP.1 /usr/local/share/man/man1/image2WebP.1 || { echo "Failed to copy the man page"; exit 1; }
+sudo cp /tmp/image2WebP-$current_version/man/image2WebP.1 /usr/local/share/man/man1/image2WebP.1 || { echo "Failed to copy the man page"; exit 1; }
 sudo gzip /usr/local/share/man/man1/image2WebP.1 || { echo "Failed to gzip the man page"; exit 1; }
 sudo /usr/libexec/makewhatis /usr/local/share/man/man1 || { echo "Failed to update man database"; exit 1; }
 echo "Man page installed and database updated successfully."
